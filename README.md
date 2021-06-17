@@ -1,8 +1,25 @@
 # cmu-blog
 
+## Setup Environment
+
+```bash
+# install api dependencies
+$ cp .env.example .env
+
+# update ENV & Save
+$ nano .env
+```
+
 ## Build Setup
 
 ```bash
+# install api dependencies
+$ cd ./api
+$ npm install
+
+# back to base directory
+$ cd ..
+
 # install dependencies
 $ yarn install
 
@@ -17,4 +34,9 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Docker Compose
+
+```bash
+# install api dependencies
+$ docker-compose up -d --build
+```
