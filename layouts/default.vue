@@ -1,15 +1,21 @@
 <template>
   <v-app dark>
-    <layouts-topbar />
+    <client-only>
+      <layouts-topbar />
+    </client-only>
     <v-main>
       <v-container>
-        <breadcrumbs />
+        <client-only>
+          <breadcrumbs />
+        </client-only>
         <nuxt />
       </v-container>
     </v-main>
-    <snackbar />
-    <overlay />
-    <b-t-t />
+    <client-only>
+      <snackbar />
+      <overlay />
+      <b-t-t />
+    </client-only>
   </v-app>
 </template>
 
