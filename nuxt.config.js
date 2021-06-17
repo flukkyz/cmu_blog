@@ -100,6 +100,37 @@ export default {
 
   auth,
 
+  dayjs: {
+    locales: ['en', 'th'],
+    defaultLocale: 'th',
+    defaultTimeZone: 'Asia/Bangkok',
+    plugins: [
+      'utc',
+      'timezone',
+      'buddhistEra',
+      'localeData'
+    ]
+  },
+
+  pwa: {
+    meta: {
+      title: 'CMU Blog',
+      author: 'FK'
+    },
+    manifest: {
+      name: 'CMU Blog',
+      short_name: 'CMUBg',
+      lang: 'en',
+      display: 'standalone',
+      background_color: '#eb9421',
+      theme_color: '#082141',
+      description: 'Blog for CMU User'
+    },
+    workbox: {
+      enabled: process.env.NODE_ENV === 'production'
+    }
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
