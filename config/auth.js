@@ -1,7 +1,8 @@
 export default {
   redirect: {
     login: `${process.env.BASE_URL}/login`,
-    callback: process.env.OAUTH_RETURN_URI
+    callback: `${process.env.BASE_URL}${process.env.OAUTH_RETURN_URI}`,
+    logout: `${process.env.BASE_URL}/`
   },
   strategies: {
     cmu: {
@@ -21,7 +22,6 @@ export default {
         user: { url: `${process.env.BASE_URL}/oauth2/me`, method: 'get' },
         logout: false
       }
-      // autoLogout: false
     }
   }
 }
