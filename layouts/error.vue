@@ -13,7 +13,7 @@
           <p class="title text-center mr-2 mt-4">
             Go to
           </p>
-          <v-btn class="px-2" large text :to="localePath({name: 'index'})">
+          <v-btn class="px-2" large text :to="{name: 'index'}">
             <span class="title">
               Home page
             </span>
@@ -48,7 +48,7 @@ export default {
     if (this.error.statusCode === 401) {
       setTimeout(async () => {
         await this.$auth.logout()
-        this.$router.push(this.localePath({ name: 'login' }))
+        this.$router.push({ name: 'login' })
       }, 5000)
     }
   },

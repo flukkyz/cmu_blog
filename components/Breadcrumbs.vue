@@ -9,7 +9,7 @@
         </template>
         <template #item="{ item }">
           <v-breadcrumbs-item :disabled="!item.to">
-            <nuxt-link v-if="item.to" class="third--text" :to="localePath(item.to)" v-text="item.text" />
+            <nuxt-link v-if="item.to" class="third--text" :to="item.to" v-text="item.text" />
             <span v-else v-text="item.text" />
           </v-breadcrumbs-item>
         </template>
