@@ -3,17 +3,34 @@
 ## Setup Environment
 
 ```bash
-# install api dependencies
+# Copy Example ENV
 $ cp .env.example .env
 
 # update ENV & Save
 $ nano .env
 ```
 
+## Database Migration
+
+```bash
+# install api dependencies in API directory
+$ cd ./api
+$ npm install
+
+# Copy Database Example in ENV API directory
+$ cp .env.example .env
+
+# update ENV & Save
+$ nano .env
+
+# Migrate your database in ENV API directory (require global "npx")
+$ npx sequelize db:migrate
+```
+
 ## Build Setup
 
 ```bash
-# install api dependencies
+# install api dependencies in API directory
 $ cd ./api
 $ npm install
 
