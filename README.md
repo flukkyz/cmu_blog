@@ -23,7 +23,8 @@ $ cp .env.example .env
 # Update ENV & Save
 $ nano .env
 
-# Migrate your database in ENV API directory (require global "npx" if not, please install $ npm install -g npx )
+# Migrate your database in ENV API directory 
+#(require global "npx" if not, please install $ npm install -g npx )
 $ npx sequelize db:migrate
 ```
 
