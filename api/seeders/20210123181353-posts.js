@@ -24,7 +24,7 @@ module.exports = {
           updated_at: dayjs().format('YYYY-MM-DD HH:mm:ss')
         }
       ))
-      queryInterface.bulkInsert('posts', posts)
+      await queryInterface.bulkInsert('posts', posts)
     } else {
       console.log(`No user ${userCreate} for create Posts`)
     }

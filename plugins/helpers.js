@@ -63,9 +63,9 @@ export default ({ app }, inject) => {
       }
     }
     if (date) {
-      return app.$dayjs(date).locale(app.$lang.getSIso()).format(dateTimeFormat[app.$lang.getSIso()].date[(dateStyle || 'medium')]) + (timeStyle ? ` ${dateTimeFormat[app.$lang.getSIso()].merge} ${app.$dayjs(date).locale(app.$lang.getSIso()).format(dateTimeFormat[app.$lang.getSIso()].time[timeStyle])}` : '')
+      return app.$dayjs(date).locale('th').format(dateTimeFormat.th.date[(dateStyle || 'medium')]) + (timeStyle ? ` ${dateTimeFormat.th.merge} ${app.$dayjs(date).locale('th').format(dateTimeFormat.th.time[timeStyle])}` : '')
     } else {
-      return app.$dayjs().locale(app.$lang.getSIso()).format(dateTimeFormat[app.$lang.getSIso()].date[(dateStyle || 'medium')]) + (timeStyle ? ` ${dateTimeFormat[app.$lang.getSIso()].merge} ${app.$dayjs().locale(app.$lang.getSIso()).format(dateTimeFormat[app.$lang.getSIso()].time[timeStyle])}` : '')
+      return app.$dayjs().locale('th').format(dateTimeFormat.th.date[(dateStyle || 'medium')]) + (timeStyle ? ` ${dateTimeFormat.th.merge} ${app.$dayjs().locale('th').format(dateTimeFormat.th.time[timeStyle])}` : '')
     }
   })
   inject('objToArr', (object) => {

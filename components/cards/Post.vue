@@ -3,7 +3,7 @@
     class="mx-auto"
   >
     <v-img
-      :src="post.Img ? post.Img.url : 'https://picsum.photos/300'"
+      :src="post.Img ? post.Img.url : `https://picsum.photos/300?random=${post.id}`"
       max-height="200px"
     />
 

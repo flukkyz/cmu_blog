@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 import auth from './config/auth'
 
 export default {
-  ssr: true,
+  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     htmlAttrs: {
