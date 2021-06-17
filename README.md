@@ -6,54 +6,54 @@
 # Copy Example ENV
 $ cp .env.example .env
 
-# update ENV & Save
+# Update ENV & Save
 $ nano .env
 ```
 
 ## Database Migration
 
 ```bash
-# install api dependencies in API directory
+# Install api dependencies in API directory
 $ cd ./api
 $ npm install
 
 # Copy Database Example in ENV API directory
 $ cp .env.example .env
 
-# update ENV & Save
+# Update ENV & Save
 $ nano .env
 
-# Migrate your database in ENV API directory (require global "npx")
+# Migrate your database in ENV API directory (require global "npx" if not, please install $ npm install -g npx )
 $ npx sequelize db:migrate
 ```
 
 ## Build Setup
 
 ```bash
-# install api dependencies in API directory
+# Install api dependencies in API directory
 $ cd ./api
 $ npm install
 
-# back to base directory
+# Back to base directory
 $ cd ..
 
-# install dependencies
+# Install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
+# Serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
+# Build for production and launch server
 $ yarn build
 $ yarn start
 
-# generate static project
+# Generate static project
 $ yarn generate
 ```
 
 ## Docker Compose
 
 ```bash
-# install api dependencies
+# Build docker
 $ docker-compose up -d --build
 ```
