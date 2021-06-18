@@ -1,4 +1,5 @@
 # cmu-blog
+CMU Blog with CMU OAuth on Nuxt.js
 
 ## Setup Environment
 
