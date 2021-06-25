@@ -43,7 +43,7 @@
             <v-icon x-small class="ml-2">
               fas fa-calendar-plus
             </v-icon>
-            {{ $dateText(post.createdAt) }}
+            {{ $dateText(post.createdAt,'medium','short') }}
           </p>
 
           <v-btn
@@ -96,7 +96,7 @@
                     <v-icon x-small class="ml-2">
                       fas fa-calendar-plus
                     </v-icon>
-                    {{ $dateText(comment.createdAt) }}
+                    {{ $dateText(comment.createdAt,'medium','short') }}
                   </span>
                 </p>
 
