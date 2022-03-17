@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
   if (!_.isEmpty(data)) {
     next()
   } else {
-    res.status(400).json({
+    return res.status(400).json({
       message: 'Bad request.'
     })
   }

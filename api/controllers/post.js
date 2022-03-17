@@ -12,7 +12,7 @@ const findByPK = async (id,res,include = []) => {
   if(data){
     return data
   }
-  res.status(404).json({
+  return res.status(404).json({
     message: 'Not Found'
   })
 }
@@ -24,8 +24,7 @@ module.exports = {
     if (matched) {
       next()
     }else{
-      console.log(v.errors)
-      res.status(400).json({
+      return res.status(400).json({
         message: 'Bad request.'+ v.errors
       })
     }
@@ -81,7 +80,7 @@ module.exports = {
           ['id', 'desc']
         ]
       })
-      res.json(db.getPagingData(lists, page, limit))
+      return res.json(db.getPagingData(lists, page, limit))
     } catch (e) {
       e.message = 'Cannot get data from database.'
       next(e)
@@ -103,7 +102,7 @@ module.exports = {
           transaction: t
         })
       })
-      res.status(201).json(newData)
+      return res.status(201).json(newData)
     } catch (e) {
       if (req.file) {
         if (fs.existsSync(req.file.path)) {
@@ -123,7 +122,7 @@ module.exports = {
     const id = req.params.id
     try {
       const data = await findByPK(id,res,[Img, User])
-      res.json(data)
+      return res.json(data)
     } catch (e) {
       e.message = 'Cannot get data from database.'
       next(e)
@@ -160,7 +159,7 @@ module.exports = {
         if (oldImg) {
           oldImg.destroy()
         }
-        res.json(data)
+        return res.json(data)
       } catch (e) {
         if (req.file) {
           if (fs.existsSync(req.file.path)) {
@@ -176,7 +175,7 @@ module.exports = {
         next(e)
       }
     }else{
-      res.status(403).json({
+      return res.status(403).json({
         message: 'Forbidden.'
       })
     }
@@ -187,13 +186,13 @@ module.exports = {
     if (['admin'].includes(req.user.role) || req.user.id === oldData.user_id) {
       try {
         await oldData.destroy()
-        res.status(204).send()
+        return res.status(204).send()
       } catch (e) {
         e.message = 'Cannot remove data from database.'
         next(e)
       }
     }else{
-      res.status(403).json({
+      return res.status(403).json({
         message: 'Forbidden.'
       })
     }

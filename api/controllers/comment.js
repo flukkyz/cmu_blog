@@ -10,7 +10,7 @@ const findByPK = async (id,res,include = []) => {
   if(data){
     return data
   }
-  res.status(404).json({
+  return res.status(404).json({
     message: 'Not Found'
   })
 }
@@ -23,7 +23,7 @@ module.exports = {
       next()
     }else{
       console.log(v.errors);
-      res.status(400).json({
+      return res.status(400).json({
         message: 'Bad request.'+ v.errors
       })
     }
